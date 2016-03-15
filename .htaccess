@@ -5,7 +5,7 @@ IndexIgnore */*
 RewriteEngine On
 
 # Merde
-DirectoryIndex index.html
+DirectoryIndex app.html
 
 # Rules
 RewriteCond %{REQUEST_FILENAME} !-f

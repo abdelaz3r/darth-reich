@@ -1,0 +1,148 @@
+* {
+	cursor: url('cursor.png'), auto;
+	cursor: url('cursor.png'), default;
+	cursor: url('cursor.png'), pointer;
+	cursor: url('cursor.png'), text;
+}
+
+html {
+	padding: 0; margin: 0;
+	width: 100%; height: 100%;
+}
+
+body {
+	position: relative;
+	padding: 0; margin: 0;
+	width: 100%; height: 100%;
+
+	font-family: 'Roboto Slab', serif;
+	font-weight: 700;
+	font-size: 15px;
+	color: white;
+}
+
+.title {
+	display: none;
+	position: absolute;
+	left: 0; right: 0;
+	z-index: 150;
+	top: 30%;
+	transform: translateY(-50%);
+	text-align: center;
+
+	font-variant: small-caps;
+	text-shadow: 
+		3px 3px #48433e,
+		4px 4px #21201e;
+}
+
+.title h1 {
+	font-size: 80px;
+	margin: 0; padding: 0;
+}
+
+.title h2 {
+	font-size: 30px;
+	margin: 0; padding: 0;
+}
+
+.map {
+	position: absolute;
+	z-index: 100;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background: #605750;
+	overflow: hidden;
+}
+
+.map .background {
+	display: none;
+	position: absolute;
+	z-index: 101;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background: url('landscape/background.png') no-repeat center;
+}
+
+.map .foreground {
+	display: none;
+	position: absolute;
+	z-index: 103;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background: url('landscape/foreground.png') no-repeat center;
+}
+
+.map .main-frame, .map .top-frame {
+	position: absolute;
+	bottom: 30%; left: 0; right: 0;
+	height: 180px;
+	font-size: 0;
+}
+
+.map .main-frame { z-index: 102; }
+.map .top-frame  { z-index: 104; }
+
+.map .main-frame .soldier, .map .top-frame .hitbox {
+	position: absolute;
+	top: 0; right: 0;
+	display: inline-block;
+	width: 80px; height: 180px;
+}
+
+.map .main-frame .soldier.standard.n1 { background: url('soldier/standard.png') no-repeat 0px 0px; }
+.map .main-frame .soldier.standard.n2 { background: url('soldier/standard.png') no-repeat -80px 0px; }
+.map .main-frame .soldier.standard.d1 { background: url('soldier/standard.png') no-repeat 0px -180px; }
+.map .main-frame .soldier.standard.d2 { background: url('soldier/standard.png') no-repeat -80px -180px; }
+
+.map .main-frame .soldier.flag.n1 { background: url('soldier/flag.png') no-repeat 0px 0px; }
+.map .main-frame .soldier.flag.n2 { background: url('soldier/flag.png') no-repeat -80px 0px; }
+.map .main-frame .soldier.flag.d1 { background: url('soldier/flag.png') no-repeat 0px -180px; }
+.map .main-frame .soldier.flag.d2 { background: url('soldier/flag.png') no-repeat -80px -180px; }
+
+.map .main-frame .soldier.flutist.n1 { background: url('soldier/flutist.png') no-repeat 0px 0px; }
+.map .main-frame .soldier.flutist.n2 { background: url('soldier/flutist.png') no-repeat -80px 0px; }
+.map .main-frame .soldier.flutist.d1 { background: url('soldier/flutist.png') no-repeat 0px -180px; }
+.map .main-frame .soldier.flutist.d2 { background: url('soldier/flutist.png') no-repeat -80px -180px; }
+
+.map .main-frame .soldier.drummer.n1 { background: url('soldier/drummer.png') no-repeat 0px 0px; }
+.map .main-frame .soldier.drummer.n2 { background: url('soldier/drummer.png') no-repeat -80px 0px; }
+.map .main-frame .soldier.drummer.d1 { background: url('soldier/drummer.png') no-repeat 0px -180px; }
+.map .main-frame .soldier.drummer.d2 { background: url('soldier/drummer.png') no-repeat -80px -180px; }
+
+.points {
+	display: none;
+	position: absolute;
+	z-index: 200;
+	top: 10px; left: 10px;
+
+	background: #605750;
+	border: solid 1px #48433e;
+	line-height: 40px;
+	padding: 0 15px;
+}
+
+.sounds {
+	display: none;
+	position: absolute;
+	z-index: 200;
+	top: 10px; right: 10px;
+
+	background: #605750;
+	border: solid 1px #48433e;
+	line-height: 40px;
+	padding: 0;
+}
+
+.sounds a {
+	display: inline-block;
+	color: white;
+	border-left: solid 1px #48433e;
+	width: 40px;
+	text-align: center;
+}
+
+.sounds a.disabled {
+	opacity: .5;
+}
+
+.sounds a:first-child {
+	border-left: none;
+}

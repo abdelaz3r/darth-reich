@@ -59,7 +59,7 @@ body {
 	position: absolute;
 	z-index: 101;
 	top: 0; left: 0; right: 0; bottom: 0;
-	background: url('landscape/background.png') no-repeat center;
+	background: url('landscape/background.jpg') no-repeat center;
 }
 
 .map .foreground {

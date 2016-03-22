@@ -2,49 +2,57 @@
 <html lang="fr">
 
 <head>
-	<title>Darth Reich : Origins</title>
-	<meta charset="utf-8" />
-	<meta name="description" content="Fuck heay !" />
+    <title>Darth Reich : Origins</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Fuck heay !" />
 
-	<link rel="stylesheet" media="screen" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="css/main.css" />
 
-	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
+
+
+    <script>
+        function loadSound() {
+            createjs.Sound.registerSound("sounds/melody_mi.ogg", 'sound0');
+            createjs.Sound.registerSound("sounds/bass.ogg", 'sound1');
+            createjs.Sound.registerSound("sounds/melody_m.ogg", 'sound2');
+            createjs.Sound.registerSound("sounds/melody_bass.ogg", 'sound3');
+            createjs.Sound.registerSound("sounds/breath.ogg", 'sound4');
+            createjs.Sound.registerSound("sounds/held.ogg", 'sound5');
+            createjs.Sound.registerSound("sounds/melody_variation.ogg", 'sound6');
+            
+            //sound mouse
+            createjs.Sound.registerSound("sounds/chainsaw.ogg", 'soundMouse');
+        }
+    </script>
 </head>
 
-<body>
-	<div class="audio">
-		<audio id="sound1" src="sounds/melody_mi.ogg" preload="auto" loop="true"></audio>
-		<audio id="sound2" src="sounds/melody_m.ogg" preload="auto" loop="true"></audio>
-		<audio id="sound3" src="sounds/melody_bass.ogg" preload="auto" loop="true"></audio>
-		<audio id="sound4" src="sounds/bass.ogg" preload="auto" loop="true"></audio>
-		<audio id="sound5" src="sounds/breath.ogg" preload="auto" loop="true"></audio>
-		<audio id="sound6" src="sounds/held.ogg" preload="auto" loop="true"></audio>
-		<audio id="sound7" src="sounds/melody_variation.ogg" preload="auto" loop="true"></audio>
-	</div>
+<body onload="loadSound();">
 
-	<div class="title">
-		<h1>Darth Reich : Origins</h1>
-		<h2>On affection shown by Jedis towards SS</h2>
-	</div>
+    <div class="title">
+        <h1>Darth Reich : Origins</h1>
+        <h2>On affection shown by Jedis towards SS</h2>
+    </div>
 
-	<div class="map">
-		<div class="background"></div>
-		<div class="main-frame"></div>
-		<div class="foreground"></div>
-		<div class="top-frame"></div>
-	</div>
-	<div class="points">&#8212;</div>
-	<div class="sounds">
-		<a href="#" data-sound="1"><i class="fa fa-bicycle"></i></a>
-		<a href="#" data-sound="2"><i class="fa fa-fort-awesome"></i></a>
-		<a href="#" data-sound="3"><i class="fa fa-bell"></i></a>
-		<a href="#" data-sound="4"><i class="fa fa-bookmark"></i></a>
-		<a href="#" data-sound="5"><i class="fa fa-diamond"></i></a>
-		<a href="#" data-sound="6"><i class="fa fa-gavel"></i></a>
-		<a href="#" data-sound="7"><i class="fa fa-key"></i></a>
-	</div>
+    <div class="map">
+        <div class="background"></div>
+        <div class="main-frame"></div>
+        <div class="foreground"></div>
+        <div class="top-frame"></div>
+    </div>
+    <div class="points">&#8212;</div>
+    <div class="sounds">
+        <a href="#" data-sound="6"><i class="fa fa-bicycle"></i></a>
+        <a href="#" data-sound="5"><i class="fa fa-fort-awesome"></i></a>
+        <a href="#" data-sound="4"><i class="fa fa-bell"></i></a>
+        <a href="#" data-sound="3"><i class="fa fa-bookmark"></i></a>
+        <a href="#" data-sound="2"><i class="fa fa-diamond"></i></a>
+        <a href="#" data-sound="1"><i class="fa fa-gavel"></i></a>
+        <a href="#" data-sound="0"><i class="fa fa-key"></i></a>
+    </div>
 </body>

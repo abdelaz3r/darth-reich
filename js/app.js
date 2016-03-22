@@ -44,7 +44,6 @@ function romanichel(nb) {
 // ----------
 // //////////
 
-
 function switchSound(sounds) {
 	if (instances[sounds].volume < 1) {
 		instances[sounds].volume = 1;
@@ -54,16 +53,17 @@ function switchSound(sounds) {
 }
 
 function play() {
-        var ppcMute = new createjs.PlayPropsConfig().set({loop: -1, volume: 0});
-        for(var y=0; y<7; y++){
-            console.log('sdafsfds');
-            instances[y] = createjs.Sound.play(nameSound[y], ppcMute);
-        }
-        instances[0].volume = 1;
+	var ppcMute = new createjs.PlayPropsConfig().set({loop: -1, volume: 0});
+	for(var y=0; y<7; y++){
+		console.log('sdafsfds');
+		instances[y] = createjs.Sound.play(nameSound[y], ppcMute);
+	}
+
+	instances[0].volume = 1;
 	setTimeout(function() {
-            for(i=1; i<7; i++){
-                instances[i].volume = 1;
-            }
+		for(i=1; i<7; i++){
+			instances[i].volume = 1;
+		}
 	}, 9800);
 }
 
@@ -72,11 +72,10 @@ function play() {
 // //////////
 
 jQuery(document).ready(function($) {
-    
-        //for sound
-        nameSound = ['sound0', 'sound1', 'sound2', 'sound3', 'sound4', 'sound5', 'sound6'];
-        instances = [];
-        
+	//for sound
+	nameSound = ['sound0', 'sound1', 'sound2', 'sound3', 'sound4', 'sound5', 'sound6'];
+	instances = [];
+	
 	var counter = 0;
 	var soldierW = 80;
 	var jump = 20;
@@ -205,13 +204,13 @@ jQuery(document).ready(function($) {
 			pointBox.html(romanichel(points));
 		}
 	});
-        
+		
 	$('.top-frame').on('click', function() {
 		createjs.Sound.play("soundMouse", {interrupt: "true"});
 	});
 
 	$('.sounds a').on('click', function() {
-            console.log('test');
+			console.log('test');
 		switchSound($(this).data('sound'));
 		$(this).toggleClass('disabled');
 	});

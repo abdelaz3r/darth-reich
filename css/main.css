@@ -72,7 +72,9 @@ body {
 
 .map .main-frame, .map .top-frame {
 	position: absolute;
-	bottom: 30%; left: 0; right: 0;
+	bottom: 30%;
+	bottom: calc(51% - 180px);
+	left: 0; right: 0;
 	height: 180px;
 	font-size: 0;
 }

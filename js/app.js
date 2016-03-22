@@ -44,48 +44,26 @@ function romanichel(nb) {
 // ----------
 // //////////
 
-function playOne(sounds, s, mute) {
-	for (var i = 0; i < sounds.length; i++) {
-		var thisTime = new Date();
 
-		if (sounds[i]['finished'] < thisTime.getTime()) {
-			sounds[i]['finished'] = thisTime.getTime() + document.getElementById(s).duration * 1000;
-			sounds[i]['channel'].src = document.getElementById(s).src;
-			sounds[i]['channel'].load();
-			
-			if (mute == true) {
-				sounds[i]['channel'].volume = 0;
-			}
-			
-			sounds[i]['channel'].play();
-			break;
-		}
-	}
-}
-
-function switchSound(sounds, i) {
-	if (sounds[i]['channel'].volume < 1) {
-		sounds[i]['channel'].volume = 1
-		return true;
+function switchSound(sounds) {
+	if (instances[sounds].volume < 1) {
+		instances[sounds].volume = 1;
 	} else {
-		sounds[i]['channel'].volume = 0
-		return false;
+		instances[sounds].volume = 0;
 	}
 }
 
-function play(sounds) {
-	playOne(sounds, 'sound1', false);
-	playOne(sounds, 'sound2', true);
-	playOne(sounds, 'sound3', true);
-	playOne(sounds, 'sound4', true);
-	playOne(sounds, 'sound5', true);
-	playOne(sounds, 'sound6', true);
-	playOne(sounds, 'sound7', true);
-
+function play() {
+        var ppcMute = new createjs.PlayPropsConfig().set({loop: -1, volume: 0});
+        for(var y=0; y<7; y++){
+            console.log('sdafsfds');
+            instances[y] = createjs.Sound.play(nameSound[y], ppcMute);
+        }
+        instances[0].volume = 1;
 	setTimeout(function() {
-		for (var i = 0; i < sounds.length; i++) {
-			sounds[i]['channel'].volume = 1;
-		}
+            for(i=1; i<7; i++){
+                instances[i].volume = 1;
+            }
 	}, 9800);
 }
 
@@ -94,16 +72,11 @@ function play(sounds) {
 // //////////
 
 jQuery(document).ready(function($) {
-	// SOUND
-	var sounds = new Array();
-	
-	for (i = 0; i < 7; i++) {
-		sounds[i] = new Array();
-		sounds[i]['channel'] = new Audio();
-		sounds[i]['channel'].loop = true;
-		sounds[i]['finished'] = -1;
-	}
-
+    
+        //for sound
+        nameSound = ['sound0', 'sound1', 'sound2', 'sound3', 'sound4', 'sound5', 'sound6'];
+        instances = [];
+        
 	var counter = 0;
 	var soldierW = 80;
 	var jump = 20;
@@ -152,7 +125,7 @@ jQuery(document).ready(function($) {
 
 	// 8000ms : demarrage du son
 	setTimeout(function() {
-		play(sounds);
+		play();
 	}, 8000);
 
 	// XXXXms : démarrage du jeu
@@ -232,16 +205,14 @@ jQuery(document).ready(function($) {
 			pointBox.html(romanichel(points));
 		}
 	});
-
-	var cursorSound = new Audio('sounds/chainsaw.ogg');
+        
 	$('.top-frame').on('click', function() {
-		cursorSound.currentTime = 0;
-		cursorSound.play();
+		createjs.Sound.play("soundMouse", {interrupt: "true"});
 	});
 
 	$('.sounds a').on('click', function() {
-		var soundId = $(this).data('sound');
-		switchSound(sounds, soundId);
+            console.log('test');
+		switchSound($(this).data('sound'));
 		$(this).toggleClass('disabled');
 	});
 });

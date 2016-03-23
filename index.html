@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Darth Reich : Origins</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Fuck heay !" />
+
+    <link rel="stylesheet" media="screen" type="text/css" href="css/main.css" />
+
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
+
+    <script>
+        function loadSound() {
+            createjs.Sound.registerSound("sounds/melody_mi.mp3", 'sound0');
+            createjs.Sound.registerSound("sounds/bass.mp3", 'sound1');
+            createjs.Sound.registerSound("sounds/melody_m.mp3", 'sound2');
+            createjs.Sound.registerSound("sounds/melody_bass.mp3", 'sound3');
+            createjs.Sound.registerSound("sounds/breath.mp3", 'sound4');
+            createjs.Sound.registerSound("sounds/held.mp3", 'sound5');
+            createjs.Sound.registerSound("sounds/melody_variation.mp3", 'sound6');
+            
+            //sound mouse
+            createjs.Sound.registerSound("sounds/chainsaw.mp3", 'soundMouse');
+        }
+    </script>
+</head>
+
+<body onload="loadSound();">
+
+    <div class="title">
+        <h1>Darth Reich : Origins</h1>
+        <h2>On affection shown by Jedis towards SS</h2>
+    </div>
+
+    <div class="map">
+        <div class="background"></div>
+        <div class="main-frame"></div>
+        <div class="foreground"></div>
+        <div class="top-frame"></div>
+    </div>
+    <div class="points">&#8212;</div>
+    <div class="sounds">
+        <a href="#" data-sound="6"><i class="fa fa-bicycle"></i></a>
+        <a href="#" data-sound="5"><i class="fa fa-fort-awesome"></i></a>
+        <a href="#" data-sound="4"><i class="fa fa-bell"></i></a>
+        <a href="#" data-sound="3"><i class="fa fa-bookmark"></i></a>
+        <a href="#" data-sound="2"><i class="fa fa-diamond"></i></a>
+        <a href="#" data-sound="1"><i class="fa fa-gavel"></i></a>
+        <a href="#" data-sound="0"><i class="fa fa-key"></i></a>
+    </div>
+</body>
